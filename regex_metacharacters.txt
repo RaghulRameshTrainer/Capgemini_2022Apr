@@ -1,0 +1,44 @@
+Metachracters:
+. -> To match any single character except a new line character
+? -> To match the preceeding character either 0 times or 1 times
+	Ex:
+		Ram? => Ra, Ram
+* -> To match the prceeding character either by 0 time n times (any number of times)
+	Ex:
+		Ram* -> Ra, Ram, Ramm, Rammm, Rammmm, Rammmmm,.....
++ -> To match the prceeding character min 1 times to n times
+	Ex:
+		Ram+ ->  Ram, Ramm, Rammm, Rammmm, Rammmmm,.....
+^ -> To match the pattens if it beginning of the word/line
+	Ex:
+		^A -> matches a words that starts with A
+$ -> To match end of the line's character
+	Ex:
+		;$ -> matches all the lines that ends with ;
+() -> grouping 
+	Ex:
+	(Ram)+ => Ram, RamRam, RamRamRam, RamRamRamRam,RamRamRamRamRam.....
+[] -> To match any single character present inside the []
+	Ex:
+	[aeiou] -> a|e|i|o|u
+| -> or conditions
+{m,n} -> matches the prceeding character if it is there min m times and max n times\
+	Ex:
+		Ram{2,5} => Ramm, Rammm, Rammmm,Rammmmm
+		Ram{3,} =>Rammm, Rammmm,Rammmmm.......
+		Ram{,2} => Ram, Ramm
+		Ram{2} => Ramm
+
+MetaSequences:
+\w -> Matches any word character ( a-zA-Z0-9_ )
+\W -> Matches everything except a word character
+\d -> Matches any digit (0-9)
+\D -> Matches everything except a number
+\s -> space character
+\S -> non space character
+\b -> word boundry
+	Ex:
+	The main street is broad 
+
+	/road/
+	\broad\b
